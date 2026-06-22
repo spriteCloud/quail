@@ -289,6 +289,52 @@
     }
     .serve-shots figcaption strong { color: #C0805A; font-weight: 600; }
 
+    /* CI PIPELINE MOCK — passing GitHub Actions run, mirrors the scenario-card preview's visual weight. */
+    .ci-mock {
+      font-family: 'Fira Code', ui-monospace, monospace;
+      background: #0E1419;
+      color: #D6DDE4;
+      border: 1px solid rgba(27,54,93,0.10);
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(15,17,23,0.06);
+      overflow: hidden;
+    }
+    .ci-mock-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      background: #161D24;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 12px;
+    }
+    .ci-mock-head .ci-title { flex: 1; color: #E8EDF2; }
+    .ci-mock-head .ci-branch { color: #4B8BBE; }
+    .ci-mock-head .ci-meta { color: #8899AA; font-size: 11px; }
+    .ci-dot { width: 10px; height: 10px; border-radius: 999px; display: inline-block; }
+    .ci-dot.ok { background: #3FB950; box-shadow: 0 0 0 3px rgba(63,185,80,0.18); }
+    .ci-jobs { list-style: none; padding: 6px 0; margin: 0; }
+    .ci-jobs li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 9px 16px;
+      font-size: 13px;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+    .ci-jobs li:first-child { border-top: 0; }
+    .ci-check.ok { color: #3FB950; font-weight: 700; width: 14px; text-align: center; }
+    .ci-job { flex: 1; color: #E8EDF2; }
+    .ci-dur { color: #8899AA; font-size: 11px; }
+    .ci-mock-foot {
+      padding: 10px 16px;
+      background: #161D24;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 12px;
+      color: #8899AA;
+    }
+    .ci-mock-foot strong { color: #4B8BBE; font-weight: 600; }
+
     /* RESPONSIVE */
     @media (max-width: 860px) {
       .grid { grid-template-columns: 1fr; }
@@ -364,6 +410,28 @@
           <div class="cta-row">
             <a class="btn btn-primary" href="https://spritecloud.github.io/quail-review/">Product page →</a>
             <a class="btn btn-ghost" href="https://github.com/spriteCloud/quail-review">GitHub</a>
+          </div>
+          <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border-warm);">
+            <span class="label" style="margin-bottom:14px; display:inline-block;">Preview</span>
+            <figure style="margin:0;" data-testid="ci-preview">
+              <div class="ci-mock" role="img" aria-label="GitHub Actions run for quail: smoke, generate, heal, verify — all passing">
+                <div class="ci-mock-head">
+                  <span class="ci-dot ok" aria-hidden="true"></span>
+                  <span class="ci-title">quail · <span class="ci-branch">pull_request</span></span>
+                  <span class="ci-meta">#412 · 2m 41s</span>
+                </div>
+                <ul class="ci-jobs">
+                  <li><span class="ci-check ok" aria-hidden="true">✓</span><span class="ci-job">smoke</span><span class="ci-dur">42s</span></li>
+                  <li><span class="ci-check ok" aria-hidden="true">✓</span><span class="ci-job">generate</span><span class="ci-dur">1m 18s</span></li>
+                  <li><span class="ci-check ok" aria-hidden="true">✓</span><span class="ci-job">heal</span><span class="ci-dur">27s</span></li>
+                  <li><span class="ci-check ok" aria-hidden="true">✓</span><span class="ci-job">verify</span><span class="ci-dur">54s</span></li>
+                </ul>
+                <div class="ci-mock-foot">
+                  <span class="ci-pr">↳ quail-bot opened <strong>quail: tests for PR #412</strong></span>
+                </div>
+              </div>
+              <figcaption style="font-family:'Fira Code', ui-monospace, monospace; font-size:12px; color:#8899AA; margin-top:10px; letter-spacing:0.02em;">Four jobs per PR — <strong style="color:var(--clear-blue);">smoke → generate → heal → verify</strong>. Bot opens a follow-up PR with the new tests.</figcaption>
+            </figure>
           </div>
         </div>
         <div class="card copper" data-testid="edition-quail">
@@ -571,10 +639,10 @@ quail prompt "verify the checkout flow" \
     <div class="container foot-inner">
       <span class="wm"><span class="s">sprite</span><span class="c">Cloud</span></span>
       <div class="foot-links">
-        <a href="https://github.com/spriteCloud/quail">Repo</a>
-        <a href="https://github.com/spriteCloud/quail/issues">Issues</a>
-        <a href="https://github.com/spriteCloud/quail/blob/main/LICENSE">AGPL‑3.0</a>
-        <a href="https://github.com/spriteCloud/quail/blob/main/COMMERCIAL.md">Commercial</a>
+        <a href="https://github.com/spriteCloud/quail-review">quail-review</a>
+        <a href="https://github.com/spriteCloud/quail-platform">quail-platform</a>
+        <a href="https://github.com/spriteCloud/quail-review/blob/main/LICENSE.md">AGPL‑3.0</a>
+        <a href="https://github.com/spriteCloud/quail-review/blob/main/COMMERCIAL.md">Commercial</a>
       </div>
     </div>
   </footer>
