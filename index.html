@@ -302,46 +302,33 @@
     <div class="nav-inner">
       <span class="wm" data-testid="wordmark"><span class="s">sprite</span><span class="c">Cloud</span></span>
       <div class="nav-links">
+        <a href="#editions">Editions</a>
         <a href="#features">Features</a>
         <a href="#examples">Examples</a>
-        <a href="#serve">Local UI</a>
-        <a href="docs.html">Docs</a>
-        <a href="#usage">Usage</a>
+        <a href="https://spritecloud.github.io/quail-review/">quail-review</a>
         <a href="#faq">FAQ</a>
-        <a href="https://github.com/spriteCloud/quail">GitHub</a>
-        <a class="nav-cta" href="https://github.com/marketplace/actions/quail" data-testid="nav-cta">Install action</a>
+        <a class="nav-cta" href="https://spritecloud.github.io/quail-review/" data-testid="nav-cta">Try quail-review</a>
       </div>
     </div>
   </nav>
 
   <header class="hero">
     <div class="container">
-      <span class="label">quail · by spriteCloud</span>
+      <span class="label">the quail suite · by spriteCloud</span>
       <h1 data-testid="hero-title">
         Pull request opens.<br>
         Tests <em>write themselves.</em>
       </h1>
       <p class="lead">
-        Give it a PR or a URL. Get back a Playwright + Gherkin suite covering
-        every layer of the 10-layer taxonomy that applies to the surface —
-        UI, API, Contract, Integration, Mobile, Non-functional — plus
-        per-form adversarial negatives, an a11y trio on every crawled page,
-        the stakeholder catalogue, a bug-discovery ledger, and locator
-        self-heal when the DOM drifts. One Go binary, Linux + macOS + Windows. <strong>v0.94</strong>.
+        Two editions, one engine. <strong>quail-review</strong> runs in your
+        pipeline as an open-source PR bot — generate, heal, scan, probe.
+        <strong>quail</strong> (commercial, <em>coming soon</em>) layers
+        a local browser UI, on-prem / data-sovereign deploy paths, and
+        named SLA on top. <strong>v1.0.0</strong>.
       </p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="https://github.com/marketplace/actions/quail" data-testid="cta-install">Add to your repo</a>
-        <a class="btn btn-ghost" href="https://github.com/spriteCloud/quail" data-testid="cta-github">View source</a>
-      </div>
-      <div class="hero-shot two-up" data-testid="hero-shot">
-        <figure>
-          <img src="img/home-probe-card.png" alt="Probe a URL card with URL field, optional Name, and Probe button" loading="eager">
-          <figcaption>Type a URL.</figcaption>
-        </figure>
-        <figure>
-          <img src="img/scenario-card.png" alt="Generated browse-journey scenario card with Given/When/Then steps and Run / Chat / Edit buttons" loading="eager">
-          <figcaption>Get tests.</figcaption>
-        </figure>
+        <a class="btn btn-primary" href="#editions" data-testid="cta-editions">Choose your edition</a>
+        <a class="btn btn-ghost" href="https://spritecloud.github.io/quail-review/" data-testid="cta-quail-review">quail-review →</a>
       </div>
       <div class="pixel-bar" aria-hidden="true" data-testid="pixel-motif">
         <span class="pb-1"></span><span class="pb-2"></span><span class="pb-3"></span>
@@ -352,6 +339,60 @@
       </div>
     </div>
   </header>
+
+  <!-- v1.0.0 — Editions section: the two SKUs side-by-side. -->
+  <section class="features" id="editions">
+    <div class="container">
+      <div class="section-head">
+        <span class="label">Two editions</span>
+        <h2>Pick the one that fits how your team ships.</h2>
+      </div>
+      <div class="grid" data-testid="editions-grid" style="grid-template-columns: repeat(2, 1fr); gap: 32px;">
+        <div class="card" data-testid="edition-quail-review">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+            <span class="num" style="margin:0;">01</span>
+            <span style="font-family:'Fira Code', monospace; font-size:11px; padding:3px 10px; background:rgba(75,139,190,0.15); color:var(--clear-blue); border-radius:999px; letter-spacing:0.08em; text-transform:uppercase;">Live now</span>
+          </div>
+          <h3 data-testid="edition-quail-review-title"><code>quail-review</code></h3>
+          <p style="margin:14px 0 18px;">Open-source PR bot. Runs as a GitHub Action or a local binary. <code>generate</code>, <code>heal</code>, <code>scan</code>, <code>probe</code>, <code>prompt</code>, <code>ledger</code>, <code>run-once</code>.</p>
+          <ul style="list-style:none; padding:0; margin:0 0 22px; font-size:14px; line-height:1.8; color:var(--graphite);">
+            <li>· AGPL-3.0 — self-host the LLM endpoint</li>
+            <li>· Runs in GitHub Actions or your laptop</li>
+            <li>· Locator self-heal on failing reports</li>
+            <li>· No serve UI; no data leaves your CI</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://spritecloud.github.io/quail-review/">Product page →</a>
+            <a class="btn btn-ghost" href="https://github.com/spriteCloud/quail-review">GitHub</a>
+          </div>
+        </div>
+        <div class="card copper" data-testid="edition-quail">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+            <span class="num" style="margin:0;">02</span>
+            <span style="font-family:'Fira Code', monospace; font-size:11px; padding:3px 10px; background:var(--copper); color:var(--white); border-radius:999px; letter-spacing:0.08em; text-transform:uppercase;" data-testid="coming-soon-pill">Coming soon</span>
+          </div>
+          <h3 data-testid="edition-quail-title"><code>quail</code></h3>
+          <p style="margin:14px 0 18px;">Consultant-led commercial edition. Everything <code>quail-review</code> ships, plus the local browser UI and an on-prem / data-sovereign deploy path.</p>
+          <ul style="list-style:none; padding:0; margin:0 0 22px; font-size:14px; line-height:1.8; color:var(--graphite);">
+            <li>· <code>quail serve</code> — local UI with Scenario chat + ▶ Run</li>
+            <li>· On-prem / data-sovereign install paths</li>
+            <li>· DGX-hosted Qwen tunnel (spriteCloud-operated)</li>
+            <li>· Named SLA + support — see <a href="https://github.com/spriteCloud/quail-review/blob/main/COMMERCIAL.md">COMMERCIAL.md</a></li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="mailto:hello@spritecloud.com?subject=quail%20early%20access" data-testid="cta-early-access">Request early access →</a>
+          </div>
+          <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border-warm);">
+            <span class="label" style="margin-bottom:14px; display:inline-block;">Preview</span>
+            <figure style="margin:0;">
+              <img src="img/scenario-card.png" alt="Browse-journey scenario card with Given/When/Then steps, Run / Chat / Edit buttons — preview of the quail commercial edition" loading="lazy" style="width:100%; height:auto; border:1px solid rgba(27,54,93,0.10); border-radius:10px; box-shadow:0 4px 14px rgba(15,17,23,0.06); display:block;">
+              <figcaption style="font-family:'Fira Code', ui-monospace, monospace; font-size:12px; color:#8899AA; margin-top:10px; letter-spacing:0.02em;">Per-scenario <strong style="color:var(--copper);">▶ Run</strong>, 💬 Chat, locator suggestions — drops in v1.0.0.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="features" id="features">
     <div class="container">
@@ -403,7 +444,7 @@
         <div class="card copper">
           <div class="num">09</div>
           <h3>Cross‑platform — Linux, macOS, Windows</h3>
-          <p>Single Go binary, no CGO. v0.94 ships <code>quail_windows_amd64.zip</code> with a <code>quail-serve.bat</code> launcher: double‑click and the UI opens at <code>http://127.0.0.1:8765/</code>. Pin to Start menu, done.</p>
+          <p>Single Go binary, no CGO. <code>quail-review</code> ships per-OS / per-arch tarballs (and a Windows zip). Same engine in CI and on your laptop — the commercial <code>quail</code> edition adds the local UI on top.</p>
         </div>
       </div>
     </div>
@@ -416,7 +457,7 @@
         <h2>See it on six real sites.</h2>
       </div>
       <p style="max-width:720px; margin-bottom:20px; color:var(--mist);">
-        Output from the <strong>v0.92.0 binary</strong>, committed to the repo.
+        Output from the v1.0.0 binary, committed to the <code>quail-review</code> repo.
         Each example is a complete Playwright + Gherkin project: features,
         step definitions, the Steps API, API + Contract + Integration specs,
         a11y trio on every crawled page (30 pages × 3 sub-templates × 5 tests),
@@ -425,32 +466,32 @@
       <div class="grid" data-testid="examples-grid">
         <div class="card">
           <div class="num">01</div>
-          <h3><a href="https://github.com/spriteCloud/quail/tree/main/examples/playwright-dev">playwright.dev</a></h3>
+          <h3><a href="https://github.com/spriteCloud/quail-review/tree/main/examples/playwright-dev">playwright.dev</a></h3>
           <p>SaaS docs, JS-heavy. <strong>183 files</strong> · 3 Gherkin journeys · 30 pages with the a11y trio · full v0.41+ template family (integration stubs, mobile matrix, network, edge cases).</p>
         </div>
         <div class="card copper">
           <div class="num">02</div>
-          <h3><a href="https://github.com/spriteCloud/quail/tree/main/examples/gohugo-io">gohugo.io</a></h3>
+          <h3><a href="https://github.com/spriteCloud/quail-review/tree/main/examples/gohugo-io">gohugo.io</a></h3>
           <p>OSS marketing + content. <strong>196 files</strong> · 3 Gherkin · 30 pages with a11y trio.</p>
         </div>
         <div class="card">
           <div class="num">03</div>
-          <h3><a href="https://github.com/spriteCloud/quail/tree/main/examples/books-toscrape-com">books.toscrape.com</a></h3>
+          <h3><a href="https://github.com/spriteCloud/quail-review/tree/main/examples/books-toscrape-com">books.toscrape.com</a></h3>
           <p>E-commerce list-and-detail. <strong>186 files</strong> · 3 Gherkin · 30 pages with a11y trio.</p>
         </div>
         <div class="card copper">
           <div class="num">04</div>
-          <h3><a href="https://github.com/spriteCloud/quail/tree/main/examples/es-wikipedia-org-madrid">es.wikipedia.org / Madrid</a></h3>
+          <h3><a href="https://github.com/spriteCloud/quail-review/tree/main/examples/es-wikipedia-org-madrid">es.wikipedia.org / Madrid</a></h3>
           <p>Non-English content. <strong>201 files</strong> · 4 Gherkin · 30 pages with a11y trio.</p>
         </div>
         <div class="card">
           <div class="num">05</div>
-          <h3><a href="https://github.com/spriteCloud/quail/tree/main/examples/spritecloud-com-dgx">spritecloud.com <span style="color:var(--copper);font-size:12px;">AI</span></a></h3>
-          <p>Marketing + lead-gen with the LLM composer enabled. <strong>197 files</strong> · 10 Gherkin · <strong>@llm-composed Scenarios</strong> on top of the deterministic baseline.</p>
+          <h3><a href="https://github.com/spriteCloud/quail-review/tree/main/examples/spritecloud-com-dgx">spritecloud.com</a></h3>
+          <p>Marketing + lead-gen, deterministic baseline plus the optional LLM composer (any OpenAI-compatible endpoint). <strong>197 files</strong> · 10 Gherkin journeys.</p>
         </div>
         <div class="card copper">
           <div class="num">06</div>
-          <h3><a href="https://github.com/spriteCloud/quail/tree/main/examples/petstore-swagger-io-dgx">petstore.swagger.io <span style="color:var(--copper);font-size:12px;">AI</span></a></h3>
+          <h3><a href="https://github.com/spriteCloud/quail-review/tree/main/examples/petstore-swagger-io-dgx">petstore.swagger.io</a></h3>
           <p>API service with OpenAPI 3. <strong>46 files</strong> · <strong>12 Contract specs × 9 tests = 108 contract-layer assertions</strong> auto-derived from the OpenAPI doc. Lights up Layer 4 like no marketing site can.</p>
         </div>
       </div>
@@ -478,41 +519,6 @@ quail prompt "verify the checkout flow" \
     </div>
   </section>
 
-  <section class="features" id="serve">
-    <div class="container">
-      <div class="section-head">
-        <span class="label">Local control room</span>
-        <h2>Run <code>quail serve</code>. Probe, edit, and re-run from your browser.</h2>
-        <p>One binary, zero install. Opens a localhost UI for tailoring an existing project or probing a fresh URL — Scenario chat, locator suggestion from the live DOM, per-scenario ▶ Run, run history with pass-rate sparkline.</p>
-      </div>
-      <div class="serve-shots" data-testid="serve-shots">
-        <figure>
-          <img src="img/home-probe-progress.png" alt="HOME card mid-probe: copper progress bar at the Composing scenarios stage, log open with stdout">
-          <figcaption>One URL in. Crawl → browser → composer → humanize. Progress + streaming log; the log auto‑collapses on a passing run.</figcaption>
-        </figure>
-        <figure>
-          <img src="img/scenario-card.png" alt="Browse-journey scenario card with copper tag chips and Given/When/Then steps">
-          <figcaption>Every scenario gets a card. BDD steps, copper tag chips, <strong>▶ Run</strong> drives a real Playwright execution.</figcaption>
-        </figure>
-        <figure>
-          <img src="img/run-drawer.png" alt="Probe console with quail probe output and journey identification logs">
-          <figcaption>Probe console below. Real binary, real stdout — verdict + reason land back in the card.</figcaption>
-        </figure>
-      </div>
-<pre class="snippet" data-testid="serve-snippet"><span class="c"># macOS / Linux — install once (amd64 or arm64)</span>
-curl -fsSL "https://github.com/spriteCloud/quail/releases/latest/download/quail_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/').tar.gz" | sudo tar -xz -C /usr/local/bin quail
-
-<span class="c"># Windows (PowerShell) — install once</span>
-iwr -OutFile $env:TEMP\quail.zip https://github.com/spriteCloud/quail/releases/latest/download/quail_windows_amd64.zip
-Expand-Archive -Force $env:TEMP\quail.zip "$env:USERPROFILE\quail"
-
-<span class="c"># open the UI (loopback only by default)</span>
-quail serve
-<span class="c"># Windows shortcut: double-click %USERPROFILE%\quail\quail-serve.bat</span>
-<span class="c"># → http://127.0.0.1:8765/</span></pre>
-    </div>
-  </section>
-
   <section class="usage" id="usage">
     <div class="container">
       <div class="usage-card">
@@ -529,7 +535,7 @@ quail serve
     <span class="k">runs-on:</span> <span class="v">ubuntu-latest</span>
     <span class="k">steps:</span>
       - <span class="k">uses:</span> <span class="v">actions/checkout@v4</span>
-      - <span class="k">uses:</span> <span class="v">spriteCloud/quail@v1</span>
+      - <span class="k">uses:</span> <span class="v">spriteCloud/quail-review@v1</span>
         <span class="k">with:</span>
           <span class="k">openai-api-key:</span> <span class="v">${{ secrets.OPENAI_API_KEY }}</span>
           <span class="k">heal-mode:</span> <span class="v">on-failure</span>
