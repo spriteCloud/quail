@@ -522,47 +522,15 @@
     <div class="container">
       <div class="section-head">
         <span class="label">Live examples</span>
-        <h2>See it on six real sites.</h2>
+        <h2>See it run against your URL.</h2>
       </div>
       <p style="max-width:720px; margin-bottom:20px; color:var(--mist);">
-        Output from the v1.0.0 binary, committed to the <code>quail-review</code> repo.
-        Each example is a complete Playwright + Gherkin project: features,
-        step definitions, the Steps API, API + Contract + Integration specs,
-        a11y trio on every crawled page (30 pages × 3 sub-templates × 5 tests),
-        catalogue, summary HTML, ledger seed, and the Playwright config.
+        Dispatch the <a href="https://github.com/spriteCloud/quail-review/actions/workflows/probe-demo.yml"><code>probe-demo</code></a>
+        workflow against any reachable URL — the bot opens a PR with the full Playwright + Gherkin suite:
+        features, step definitions, the Steps API, API + Contract + Integration specs,
+        the a11y trio on every crawled page, catalogue, summary HTML, ledger seed, and the Playwright config.
+        That live output is the canonical reference; the binary's emission shape evolves with each release.
       </p>
-      <div class="grid" data-testid="examples-grid">
-        <div class="card">
-          <div class="num">01</div>
-          <h3><a href="https://github.com/spriteCloud/quail-review/tree/main/examples/playwright-dev">playwright.dev</a></h3>
-          <p>SaaS docs, JS-heavy. <strong>183 files</strong> · 3 Gherkin journeys · 30 pages with the a11y trio · full v0.41+ template family (integration stubs, mobile matrix, network, edge cases).</p>
-        </div>
-        <div class="card copper">
-          <div class="num">02</div>
-          <h3><a href="https://github.com/spriteCloud/quail-review/tree/main/examples/gohugo-io">gohugo.io</a></h3>
-          <p>OSS marketing + content. <strong>196 files</strong> · 3 Gherkin · 30 pages with a11y trio.</p>
-        </div>
-        <div class="card">
-          <div class="num">03</div>
-          <h3><a href="https://github.com/spriteCloud/quail-review/tree/main/examples/books-toscrape-com">books.toscrape.com</a></h3>
-          <p>E-commerce list-and-detail. <strong>186 files</strong> · 3 Gherkin · 30 pages with a11y trio.</p>
-        </div>
-        <div class="card copper">
-          <div class="num">04</div>
-          <h3><a href="https://github.com/spriteCloud/quail-review/tree/main/examples/es-wikipedia-org-madrid">es.wikipedia.org / Madrid</a></h3>
-          <p>Non-English content. <strong>201 files</strong> · 4 Gherkin · 30 pages with a11y trio.</p>
-        </div>
-        <div class="card">
-          <div class="num">05</div>
-          <h3><a href="https://github.com/spriteCloud/quail-review/tree/main/examples/spritecloud-com-dgx">spritecloud.com</a></h3>
-          <p>Marketing + lead-gen, deterministic baseline plus the optional LLM composer (any OpenAI-compatible endpoint). <strong>197 files</strong> · 10 Gherkin journeys.</p>
-        </div>
-        <div class="card copper">
-          <div class="num">06</div>
-          <h3><a href="https://github.com/spriteCloud/quail-review/tree/main/examples/petstore-swagger-io-dgx">petstore.swagger.io</a></h3>
-          <p>API service with OpenAPI 3. <strong>46 files</strong> · <strong>12 Contract specs × 9 tests = 108 contract-layer assertions</strong> auto-derived from the OpenAPI doc. Lights up Layer 4 like no marketing site can.</p>
-        </div>
-      </div>
     </div>
   </section>
 

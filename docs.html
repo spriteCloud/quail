@@ -474,27 +474,24 @@
 
   <section class="docs" id="examples">
     <div class="container">
-      <h2><span class="num">05</span>Flagship examples</h2>
+      <h2><span class="num">05</span>What a probe emits</h2>
       <p class="lede">
-        The two reference probes in the <code>examples/</code> directory of the
-        repo. They're complementary — the marketing site exercises layers
-        the API service can't, and vice versa.
+        Two complementary shapes the same binary produces, depending on what's at the URL.
       </p>
       <table class="dense">
-        <thead><tr><th></th><th><a href="https://github.com/spriteCloud/quail-review/tree/main/examples/spritecloud-com-dgx">spritecloud-com-dgx</a></th><th><a href="https://github.com/spriteCloud/quail-review/tree/main/examples/petstore-swagger-io-dgx">petstore-swagger-io-dgx</a></th></tr></thead>
+        <thead><tr><th></th><th>Marketing / SaaS site</th><th>API service with OpenAPI 3</th></tr></thead>
         <tbody>
-          <tr><td>Target shape</td><td>Marketing + lead-gen forms</td><td>API service with OpenAPI 3</td></tr>
-          <tr><td>Files emitted</td><td><strong>197</strong></td><td><strong>46</strong></td></tr>
-          <tr><td>Gherkin Scenarios</td><td>66 (34 <code>@llm-composed</code>)</td><td>0 (no UI journeys)</td></tr>
-          <tr><td>A11y trio (uncapped)</td><td>30 pages × 3 sub-templates × 5 tests = <strong>450 a11y blocks</strong></td><td>1 page × 3 × 5 = 15</td></tr>
-          <tr><td>Contract layer</td><td>0 (no schema surface)</td><td><strong>12 contract specs × 9 tests = 108 contract assertions</strong></td></tr>
-          <tr><td>API layer</td><td>1 form-based contract (10 tests)</td><td>4 endpoint-based contracts</td></tr>
+          <tr><td>Typical file count</td><td><strong>~120–200</strong></td><td><strong>~45–60</strong></td></tr>
+          <tr><td>Gherkin Scenarios</td><td>3–10 journeys (+ up to 5 <code>@llm-composed</code> each when the composer is on)</td><td>0 (no UI journeys)</td></tr>
+          <tr><td>A11y trio</td><td>Per crawled page, capped by coverage (3/5/10)</td><td>Single-page coverage</td></tr>
+          <tr><td>Contract layer</td><td>0 (no schema surface)</td><td><strong>1 spec × 9 tests per discovered endpoint</strong></td></tr>
+          <tr><td>API layer</td><td>1 form-based contract per <code>&lt;form&gt;</code> (10 tests)</td><td>1 endpoint-based contract per route</td></tr>
           <tr><td>Integration layer</td><td>5 stubs (api + db + cache + obs + auth) × 3 blocks</td><td>same</td></tr>
-          <tr><td>Mobile layer</td><td>4 devices × 2 orientations = 8 tests / page</td><td>same</td></tr>
-          <tr><td>Demonstrates</td><td>Per-page edge-case depth + composer-driven journey variants + uncapped a11y</td><td>Schema-driven contract generation against a real OpenAPI 3 surface</td></tr>
+          <tr><td>Mobile layer</td><td>4 devices × 2 orientations per capped page</td><td>same</td></tr>
+          <tr><td>Demonstrates</td><td>Per-page edge-case depth + composer-driven journey variants</td><td>Schema-driven contract generation against a real OpenAPI 3 surface</td></tr>
         </tbody>
       </table>
-      <p style="margin-top:8px;">Together they show all six probe-accessible taxonomy layers in action. The four AI-off example projects (<code>playwright-dev</code>, <code>gohugo-io</code>, <code>books-toscrape-com</code>, <code>es-wikipedia-org-madrid</code>) each ship 183–201 files exercising the full template family deterministically; the two AI-on examples (<code>spritecloud-com-dgx</code>, <code>petstore-swagger-io-dgx</code>) add the composer pass on top. All six are re-emitted with each release via <code>scripts/refresh-examples.sh</code>.</p>
+      <p style="margin-top:8px;">Run the <a href="https://github.com/spriteCloud/quail-review/actions/workflows/probe-demo.yml"><code>probe-demo</code></a> workflow against your own URL to see the current emission shape — the binary's output evolves release to release.</p>
     </div>
   </section>
 
