@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>quail — by spriteCloud</title>
-  <meta name="description" content="A Go binary + GitHub Action that watches a PR (or any URL) and opens a follow-up PR with Gherkin features (via playwright-bdd), API contract / GraphQL / webhook tests, visual regression baselines, accessibility / responsive / performance / security / health / observability specs, gRPC contracts from .proto diffs, a stakeholder catalogue, a bug-discovery ledger, and self-healing locators.">
+  <title>quail — the test-writing engine · by spriteCloud</title>
+  <meta name="description" content="quail is the test-writing engine: probe live URLs or PR diffs, compose Gherkin scenarios, generate Playwright tests, open a follow-up PR, and self-heal locators when the DOM drifts. quail-review is the OSS distribution; quail-platform (commercial) adds a local UI and on-prem deploy.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
@@ -348,11 +348,10 @@
     <div class="nav-inner">
       <span class="wm" data-testid="wordmark"><span class="s">sprite</span><span class="c">Cloud</span></span>
       <div class="nav-links">
-        <a href="#editions">Editions</a>
-        <a href="#features">Features</a>
-        <a href="#examples">Examples</a>
-        <a href="https://spritecloud.github.io/quail-review/">quail-review</a>
-        <a href="#faq">FAQ</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#editions">What's available</a>
+        <a href="docs.html">Docs</a>
+        <a href="https://spritecloud.github.io/quail-review/">quail-review →</a>
         <a class="nav-cta" href="https://spritecloud.github.io/quail-review/" data-testid="nav-cta">Try quail-review</a>
       </div>
     </div>
@@ -362,18 +361,18 @@
     <div class="container">
       <span class="label">the quail suite · by spriteCloud</span>
       <h1 data-testid="hero-title">
-        Pull request opens.<br>
-        Tests <em>write themselves.</em>
+        Generate the tests<br>
+        you <em>didn't have time</em> to write.
       </h1>
       <p class="lead">
-        Two editions, one engine. <strong>quail-review</strong> runs in your
-        pipeline as an open-source PR bot — generate, heal, scan, probe.
-        <strong>quail-platform</strong> (commercial, <em>coming soon</em>) layers
-        a local browser UI, on-prem / data-sovereign deploy paths, and
-        named SLA on top. <strong>v1.0.0</strong>.
+        <strong>quail</strong> is a small Go binary that probes live URLs and
+        PR diffs, then opens a follow-up PR with the Playwright + Gherkin
+        suite it would take a QA engineer a week to write by hand —
+        UI, API, contract, a11y, perf, mobile, all ten layers covered.
+        Self-heals locators when the DOM drifts. <strong>v1.0.0</strong>.
       </p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#editions" data-testid="cta-editions">Choose your edition</a>
+        <a class="btn btn-primary" href="#workflow" data-testid="cta-workflow">How it works</a>
         <a class="btn btn-ghost" href="https://spritecloud.github.io/quail-review/" data-testid="cta-quail-review">quail-review →</a>
       </div>
       <div class="pixel-bar" aria-hidden="true" data-testid="pixel-motif">
@@ -386,12 +385,54 @@
     </div>
   </header>
 
+  <!-- v1.0.13 — Workflow section: the engine in 5 verbs. -->
+  <section class="features" id="workflow">
+    <div class="container">
+      <div class="section-head">
+        <span class="label">The engine, in five verbs</span>
+        <h2>Probe. Compose. Generate. Review. Heal.</h2>
+      </div>
+      <p style="max-width:720px; margin-bottom:28px; color:var(--mist);">
+        One loop, five steps. Every other capability — the a11y trio,
+        the API contract specs, the gRPC tests from <code>.proto</code> diffs,
+        the bug-discovery ledger — slots into this loop.
+      </p>
+      <div class="grid" data-testid="workflow-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px;">
+        <div class="card">
+          <div class="num">01</div>
+          <h3>Probe</h3>
+          <p>Crawl a live URL or a PR diff. Browser-driven (chromium / firefox / webkit), stealth on by default, engine cascade on hardened WAFs.</p>
+        </div>
+        <div class="card copper">
+          <div class="num">02</div>
+          <h3>Compose</h3>
+          <p>Optional LLM pass adds humanized Gherkin scenarios per journey. Any OpenAI-compatible endpoint — ollama, vLLM, DGX. Skips deterministically when offline.</p>
+        </div>
+        <div class="card">
+          <div class="num">03</div>
+          <h3>Generate</h3>
+          <p>Render Playwright + <code>playwright-bdd</code> specs across the 10-layer taxonomy — UI, API, contract, integration, a11y, mobile, perf, security, observability, data.</p>
+        </div>
+        <div class="card copper">
+          <div class="num">04</div>
+          <h3>Review</h3>
+          <p>Open a follow-up PR with the generated suite. A stakeholder catalogue + <code>summary.html</code> ride along — reviewers don't have to read TypeScript.</p>
+        </div>
+        <div class="card">
+          <div class="num">05</div>
+          <h3>Heal</h3>
+          <p>When a locator drifts, quail rewrites it against the live DOM. Failed CI becomes passing CI without a human in the loop.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- v1.0.0 — Editions section: the two SKUs side-by-side. -->
   <section class="features" id="editions">
     <div class="container">
       <div class="section-head">
-        <span class="label">Two editions</span>
-        <h2>Pick the one that fits how your team ships.</h2>
+        <span class="label">What's available now</span>
+        <h2>One engine, two distributions.</h2>
       </div>
       <div class="grid" data-testid="editions-grid" style="grid-template-columns: repeat(2, 1fr); gap: 32px;">
         <div class="card" data-testid="edition-quail-review">
@@ -462,144 +503,17 @@
     </div>
   </section>
 
-  <section class="features" id="features">
-    <div class="container">
-      <div class="section-head">
-        <span class="label">What it does</span>
-        <h2>Deterministic where it matters. Humanized where it helps.</h2>
-      </div>
-      <div class="grid" data-testid="feature-grid">
-        <div class="card">
-          <div class="num">01</div>
-          <h3>Gherkin-first scaffolding</h3>
-          <p>Regex and heuristic extractors map live URLs to user journeys, then emit <code>.feature</code> files in Given/When/Then. Stakeholders read the contract; <code>playwright-bdd</code> runs it.</p>
-        </div>
-        <div class="card copper">
-          <div class="num">02</div>
-          <h3>Journeys, priorities, tags</h3>
-          <p>Every test name carries <code>@journey:&lt;kind&gt;</code> and <code>@priority:&lt;level&gt;</code>. Run <code>--grep @priority:critical</code> on every PR; standard nightly; nice-to-have weekly.</p>
-        </div>
-        <div class="card">
-          <div class="num">03</div>
-          <h3>API contracts + UI flows</h3>
-          <p>Every form on the site gets a sibling <code>*.api.spec.ts</code> — happy, missing-required, malformed-email, oversized, wrong-method — decoupled from the UI happy-flow.</p>
-        </div>
-        <div class="card">
-          <div class="num">04</div>
-          <h3>Stakeholder docs included</h3>
-          <p>Each run drops <code>tests/e2e/docs/test-catalogue.md</code> (every page, every journey, every priority) and a branded <code>summary.html</code> with a priority-mix bar. Reviewers don't need to read code.</p>
-        </div>
-        <div class="card copper">
-          <div class="num">05</div>
-          <h3>Bug-discovery ledger</h3>
-          <p>Failed tests don't die in CI logs — <code>quail ledger update</code> merges them into <code>findings.md</code>, deduped by (spec, test), risk-weighted by priority, surviving across runs.</p>
-        </div>
-        <div class="card">
-          <div class="num">06</div>
-          <h3>Self‑healing locators</h3>
-          <p>Playwright locator failures get rewritten against the live DOM. Failed CI runs become passing CI runs without manual edits.</p>
-        </div>
-        <div class="card copper">
-          <div class="num">07</div>
-          <h3>Quality battery on every probe</h3>
-          <p>Every probe emits accessibility (axe-core), responsive viewports, perf SLO, security headers, health probes, observability headers, visual baselines (toHaveScreenshot), and — when the site advertises them — OpenAPI / GraphQL contract + webhook + i18n specs.</p>
-        </div>
-        <div class="card">
-          <div class="num">08</div>
-          <h3>gRPC contracts from .proto diffs</h3>
-          <p>Drop a <code>.proto</code> file in your PR and quail emits per-RPC contract tests classified by streaming shape (unary / server-stream / client-stream / bidi) using <code>@grpc/grpc-js</code>.</p>
-        </div>
-        <div class="card copper">
-          <div class="num">09</div>
-          <h3>Cross‑platform — Linux, macOS, Windows</h3>
-          <p>Single Go binary, no CGO. <code>quail-review</code> ships per-OS / per-arch tarballs (and a Windows zip). Same engine in CI and on your laptop — the commercial <code>quail-platform</code> edition adds the local UI on top.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="features" id="examples">
-    <div class="container">
-      <div class="section-head">
-        <span class="label">Live examples</span>
-        <h2>See it run against your URL.</h2>
-      </div>
-      <p style="max-width:720px; margin-bottom:20px; color:var(--mist);">
-        Dispatch the <a href="https://github.com/spriteCloud/quail-review/actions/workflows/probe-demo.yml"><code>probe-demo</code></a>
-        workflow against any reachable URL — the bot opens a PR with the full Playwright + Gherkin suite:
-        features, step definitions, the Steps API, API + Contract + Integration specs,
-        the a11y trio on every crawled page, catalogue, summary HTML, ledger seed, and the Playwright config.
-        That live output is the canonical reference; the binary's emission shape evolves with each release.
+  <!-- v1.0.13 — single-line pointer in place of the duplicated
+       Features/Examples/Coverage/Usage/FAQ that used to live here.
+       Those belong on the quail-review product page; the home links
+       out instead of repeating itself. -->
+  <section class="features" id="more" style="padding-top: 24px;">
+    <div class="container" style="text-align: center;">
+      <p style="max-width:680px; margin: 0 auto; color: var(--graphite);">
+        Looking for the feature matrix, three live demos, install
+        commands, and FAQ? They live on the
+        <a href="https://spritecloud.github.io/quail-review/" style="color: var(--copper); border-bottom: 1px solid var(--copper); font-weight: 600;">quail-review product page →</a>
       </p>
-    </div>
-  </section>
-
-  <section class="features" id="stakeholder">
-    <div class="container">
-      <div class="section-head">
-        <span class="label">Coverage knobs</span>
-        <h2>Dial breadth vs. depth without forking the config.</h2>
-      </div>
-      <pre class="snippet" data-testid="coverage-snippet"><span class="c"># quick CI smoke (8 pages, 1 journey per kind, 3 fuzz specs)</span>
-quail probe --url https://shop.example.com --coverage breadth
-
-<span class="c"># default — current behaviour (20 pages, 3 journeys per kind, 5 fuzz)</span>
-quail probe --url https://shop.example.com
-
-<span class="c"># high-stakes audit (50 pages, 6 journeys per kind, 10 fuzz)</span>
-quail probe --url https://shop.example.com --coverage depth
-
-<span class="c"># focused, prompt-driven, runs and bundles an evidence ZIP</span>
-quail prompt "verify the checkout flow" \
-  --url https://shop.example.com --evidence</pre>
-    </div>
-  </section>
-
-  <section class="usage" id="usage">
-    <div class="container">
-      <div class="usage-card">
-        <div>
-          <span class="label">Drop‑in workflow</span>
-          <h2>One step. Pure Go. No CGO.</h2>
-          <p>Bring any OpenAI‑compatible endpoint — ollama, vLLM, a DGX‑hosted model, or the public API. Leave the key empty and you still get deterministic scaffolds.</p>
-        </div>
-<pre class="snippet" data-testid="snippet"><span class="c"># .github/workflows/quail.yml</span>
-<span class="k">name:</span> <span class="v">quail</span>
-<span class="k">on:</span> <span class="v">pull_request</span>
-<span class="k">jobs:</span>
-  <span class="k">quail:</span>
-    <span class="k">runs-on:</span> <span class="v">ubuntu-latest</span>
-    <span class="k">steps:</span>
-      - <span class="k">uses:</span> <span class="v">actions/checkout@v4</span>
-      - <span class="k">uses:</span> <span class="v">spriteCloud/quail-review@v1</span>
-        <span class="k">with:</span>
-          <span class="k">openai-api-key:</span> <span class="v">${{ secrets.OPENAI_API_KEY }}</span>
-          <span class="k">heal-mode:</span> <span class="v">on-failure</span>
-</pre>
-      </div>
-    </div>
-  </section>
-
-  <section class="faq" id="faq">
-    <div class="container">
-      <div class="section-head">
-        <span class="label">Common questions</span>
-        <h2>FAQ</h2>
-      </div>
-      <div class="faq-list" data-testid="faq-list">
-        <details class="faq-item" data-testid="faq-item">
-          <summary>Does quail send my source code to a third-party LLM?</summary>
-          <p>Only when you configure an inference endpoint and your `OPENAI_API_KEY` is set. Even then, the LLM is restricted to rewriting test titles and step comments inside a deterministic scaffold. The PR diff is never sent unless you explicitly opt in with `QUAIL_ALLOW_DIFF_TO_LLM=1`.</p>
-        </details>
-        <details class="faq-item" data-testid="faq-item">
-          <summary>What happens when the LLM is unavailable or returns garbage?</summary>
-          <p>quail keeps the deterministic scaffold. The LLM rewrite is checked against the original for structural equivalence — same imports, same number of test declarations — and any mismatch is silently discarded.</p>
-        </details>
-        <details class="faq-item" data-testid="faq-item">
-          <summary>Can I use my own model instead of OpenAI?</summary>
-          <p>Yes. Any OpenAI-compatible endpoint works — ollama, vLLM, a DGX-hosted model, or a private gateway. Point `OPENAI_BASE_URL` at it and set `QUAIL_MODEL` to the model name.</p>
-        </details>
-      </div>
     </div>
   </section>
 
