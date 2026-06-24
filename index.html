@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>quail — the test-writing engine · by spriteCloud</title>
-  <meta name="description" content="quail is the test-writing engine: probe live URLs or PR diffs, compose Gherkin scenarios, generate Playwright tests, open a follow-up PR, and self-heal locators when the DOM drifts. quail-review is the OSS distribution; quail-platform (commercial) adds a local UI and on-prem deploy.">
+  <title>quail — every PR opens with the tests · by spriteCloud</title>
+  <meta name="description" content="Every pull request opens with the tests it should have shipped with. quail crawls the page, opens a PR with the suite, and keeps it green when the page changes. Open-source bot (quail-review) or run-for-you service (quail-platform, hosted in spriteCloud).">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
@@ -365,11 +365,9 @@
         you <em>didn't have time</em> to write.
       </h1>
       <p class="lead">
-        <strong>quail</strong> is a small Go binary that probes live URLs and
-        PR diffs, then opens a follow-up PR with the Playwright + Gherkin
-        suite it would take a QA engineer a week to write by hand —
-        UI, API, contract, a11y, perf, mobile, all ten layers covered.
-        Self-heals locators when the DOM drifts. <strong>v1.0.0</strong>.
+        Every pull request opens with the tests you'd have written, if
+        you had the week. <strong>quail</strong> crawls the page, opens
+        a PR with the suite, and keeps it green when the page changes.
       </p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#workflow" data-testid="cta-workflow">How it works</a>
@@ -392,36 +390,31 @@
         <span class="label">The engine, in five verbs</span>
         <h2>Probe. Compose. Generate. Review. Heal.</h2>
       </div>
-      <p style="max-width:720px; margin-bottom:28px; color:var(--mist);">
-        One loop, five steps. Every other capability — the a11y trio,
-        the API contract specs, the gRPC tests from <code>.proto</code> diffs,
-        the bug-discovery ledger — slots into this loop.
-      </p>
       <div class="grid" data-testid="workflow-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px;">
         <div class="card">
           <div class="num">01</div>
           <h3>Probe</h3>
-          <p>Crawl a live URL or a PR diff. Browser-driven (chromium / firefox / webkit), stealth on by default, engine cascade on hardened WAFs.</p>
+          <p>Crawl the page like a real user. Anti-bot? We handle that.</p>
         </div>
         <div class="card copper">
           <div class="num">02</div>
           <h3>Compose</h3>
-          <p>Optional LLM pass adds humanized Gherkin scenarios per journey. Any OpenAI-compatible endpoint — ollama, vLLM, DGX. Skips deterministically when offline.</p>
+          <p>Optional LLM pass writes the scenarios in plain English.</p>
         </div>
         <div class="card">
           <div class="num">03</div>
           <h3>Generate</h3>
-          <p>Render Playwright + <code>playwright-bdd</code> specs across the 10-layer taxonomy — UI, API, contract, integration, a11y, mobile, perf, security, observability, data.</p>
+          <p>Tests for every layer that matters — UI, API, accessibility, performance.</p>
         </div>
         <div class="card copper">
           <div class="num">04</div>
           <h3>Review</h3>
-          <p>Open a follow-up PR with the generated suite. A stakeholder catalogue + <code>summary.html</code> ride along — reviewers don't have to read TypeScript.</p>
+          <p>A PR lands with the tests and a stakeholder summary. No code-reading required.</p>
         </div>
         <div class="card">
           <div class="num">05</div>
           <h3>Heal</h3>
-          <p>When a locator drifts, quail rewrites it against the live DOM. Failed CI becomes passing CI without a human in the loop.</p>
+          <p>Page changed. Test still passes. We rewrite the locator for you.</p>
         </div>
       </div>
     </div>
@@ -441,13 +434,7 @@
             <span style="font-family:'Fira Code', monospace; font-size:11px; padding:3px 10px; background:rgba(75,139,190,0.15); color:var(--clear-blue); border-radius:999px; letter-spacing:0.08em; text-transform:uppercase;">Live now</span>
           </div>
           <h3 data-testid="edition-quail-review-title"><code>quail-review</code></h3>
-          <p style="margin:14px 0 18px;">Open-source PR bot. Runs as a GitHub Action or a local binary. <code>generate</code>, <code>heal</code>, <code>scan</code>, <code>probe</code>, <code>prompt</code>, <code>ledger</code>, <code>run-once</code>.</p>
-          <ul style="list-style:none; padding:0; margin:0 0 22px; font-size:14px; line-height:1.8; color:var(--graphite);">
-            <li>· AGPL-3.0 — self-host the LLM endpoint</li>
-            <li>· Runs in GitHub Actions or your laptop</li>
-            <li>· Locator self-heal on failing reports</li>
-            <li>· No serve UI; no data leaves your CI</li>
-          </ul>
+          <p style="margin:14px 0 22px;">Open-source PR bot. Drop it in your GitHub Actions and every pull request opens with the tests it should have shipped with.</p>
           <div class="cta-row">
             <a class="btn btn-primary" href="https://spritecloud.github.io/quail-review/">Product page →</a>
             <a class="btn btn-ghost" href="https://github.com/spriteCloud/quail-review">GitHub</a>
@@ -481,21 +468,15 @@
             <span style="font-family:'Fira Code', monospace; font-size:11px; padding:3px 10px; background:var(--copper); color:var(--white); border-radius:999px; letter-spacing:0.08em; text-transform:uppercase;" data-testid="coming-soon-pill">Coming soon</span>
           </div>
           <h3 data-testid="edition-quail-platform-title"><code>quail-platform</code></h3>
-          <p style="margin:14px 0 18px;">Consultant-led commercial edition. Everything <code>quail-review</code> ships, plus the local browser UI and an on-prem / data-sovereign deploy path.</p>
-          <ul style="list-style:none; padding:0; margin:0 0 22px; font-size:14px; line-height:1.8; color:var(--graphite);">
-            <li>· <code>quail serve</code> — local UI with Scenario chat + ▶ Run</li>
-            <li>· On-prem / data-sovereign install paths</li>
-            <li>· DGX-hosted Qwen tunnel (spriteCloud-operated)</li>
-            <li>· Named SLA + support — see <a href="https://github.com/spriteCloud/quail-platform/blob/main/COMMERCIAL.md">COMMERCIAL.md</a></li>
-          </ul>
+          <p style="margin:14px 0 22px;">Our QA team runs quail on your project — hosted inside spriteCloud, on our models, on our data-privacy boundary. You get a project view to track every test, every finding, every PR. <strong>Seats opening soon.</strong></p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="mailto:barzilay@spritecloud.com?subject=quail-platform%20early%20access" data-testid="cta-early-access">Request early access →</a>
+            <a class="btn btn-primary" href="mailto:barzilay@spritecloud.com?subject=quail-platform%20project%20review" data-testid="cta-project-review">Book a project review →</a>
           </div>
           <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border-warm);">
             <span class="label" style="margin-bottom:14px; display:inline-block;">Preview</span>
             <figure style="margin:0;">
               <img src="img/scenario-card.png" alt="Browse-journey scenario card with Given/When/Then steps, Run / Chat / Edit buttons — preview of the quail-platform commercial edition" loading="lazy" style="width:100%; height:auto; border:1px solid rgba(27,54,93,0.10); border-radius:10px; box-shadow:0 4px 14px rgba(15,17,23,0.06); display:block;">
-              <figcaption style="font-family:'Fira Code', ui-monospace, monospace; font-size:12px; color:#8899AA; margin-top:10px; letter-spacing:0.02em;">Per-scenario <strong style="color:var(--copper);">▶ Run</strong>, 💬 Chat, locator suggestions — drops in v1.0.0.</figcaption>
+              <figcaption style="font-family:'Fira Code', ui-monospace, monospace; font-size:12px; color:#8899AA; margin-top:10px; letter-spacing:0.02em;">Per-scenario <strong style="color:var(--copper);">▶ Run</strong>, 💬 Chat, locator suggestions — the view your client gets.</figcaption>
             </figure>
           </div>
         </div>
