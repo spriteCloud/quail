@@ -1,8 +1,8 @@
 # quail-page
 
-Source for the [quail](https://github.com/spriteCloud/quail) landing
+Source for the [quail](https://spritecloud.github.io/quail/) landing
 site, published via GitHub Pages at
-<https://spritecloud.github.io/quail-page/>.
+<https://spritecloud.github.io/quail/>.
 
 - `index.html` — landing page
 - `docs.html` — command reference + recipes
